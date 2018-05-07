@@ -16,7 +16,7 @@ class Student < ActiveRecord::Base
 
   def self.search(term)
     if !term.blank?
-      self.where("name like ?", "#{term}")
+      self.all.where("name like ?", "#{term}")
     else
       self.all
     end
